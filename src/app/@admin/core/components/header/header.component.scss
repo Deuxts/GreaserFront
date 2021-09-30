@@ -1,0 +1,11 @@
+@import "./../../../pages/admin.component.scss";
+
+button#sidebarToggle {
+    background-color: $rosa-greaser;
+    color: $admin-primary-color;
+    border-color: $rosa-greaser-minus;
+}
+.navbar {
+    background-color: $admin-primary-color;
+    color: $rosa-greaser-minus;
+}
