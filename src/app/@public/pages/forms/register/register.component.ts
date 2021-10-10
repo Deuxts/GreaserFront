@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     birthday: ''
   };
 
-  constructor(private api: UsersService, private router:Router) { }
+  constructor(private api: UsersService, private router: Router) { }
 
   ngOnInit(): void {
     const data = new Date();
