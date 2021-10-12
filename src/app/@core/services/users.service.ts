@@ -16,8 +16,8 @@ export class UsersService extends ApiService {
   }
 
 
-  getUser(){
-    return this.get(USERS_LIST_QUERY, {include: true}).pipe(map((result: any) => {
+  getUser(page: number= 1, itemPage: number = 20){
+    return this.get(USERS_LIST_QUERY, {include: true, itemPage, page}).pipe(map((result: any) => {
       return result.users; }));
   }
   register(user: IRegisterForm){

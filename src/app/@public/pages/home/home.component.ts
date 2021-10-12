@@ -13,15 +13,15 @@ export class HomeComponent implements OnInit {
   constructor(private usersApi: UsersService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.auth.login('danzet@outlook.com', '1234').subscribe(result => {
+    /*this.auth.login('danzet@outlook.com', '1234').subscribe(result => {
       console.log(result); // comprueba el ingreso a la pagina
-    });
+    });*/
     this.usersApi.getUser().subscribe(result => {
       console.log(result); // muestra la lista de usuarios
     });
-    this.auth.getMe().subscribe(result => {
+    /*this.auth.getMe().subscribe(result => {
       console.log(result); // muestra el valor del token
-    });
+    });*/
   }
 
 }

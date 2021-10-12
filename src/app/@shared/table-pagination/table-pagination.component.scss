@@ -1,0 +1,31 @@
+@import "../../@admin/pages/admin.component.scss";
+
+th{
+    color:white;
+}
+th.delgado{
+    color:white;
+    font-weight: lighter;
+}
+td{
+    color:white; 
+}
+table{
+    background-color: #35363a ;
+}
+ngb-pagination ::ng-deep ul > li:not(.active) > a {
+    color: white;
+    background-color: rgba(53, 54, 59, 0.5) !important;
+}
+
+ngb-pagination ::ng-deep ul > li.active > a {
+    color: rgba(53, 54, 59, 0.5) !important;
+    font-weight:bolder ;
+    background-color: rgba(250, 189, 214, 0.904) !important;
+}
+
+select{
+    background: rgba(53, 54, 59, 0.5);
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+}
