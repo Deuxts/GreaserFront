@@ -1,14 +1,21 @@
 <div class="container">
+    <button class="btn btn-primary float-right mb-2" (click)="manageAction('add', '')"> Añadir</button>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
-                <th scope="col" *ngFor="let column of tableColumns">{{column.label}} </th>
+                    <th scope="col" *ngFor="let column of tableColumns">{{column.label}} </th>
+                    <th scope="col" >Gestion de información </th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let data of data$ | async">
-                <th class="delgado" scope="row" *ngFor="let val of tableColumns">{{ data[val.property] }}</th>
+                    <td class="delgado" scope="row" *ngFor="let val of tableColumns">{{ data[val.property] }}</td>
+                    <td>
+                        <button class="btn btn-primary mb-1" (click)="manageAction('edit', data)"> Editar</button>&nbsp;
+                        <button class="btn btn-info  mb-1" (click)="manageAction('info', data)"> Info</button>&nbsp;
+                        <button class="btn btn-danger mb-1" (click)="manageAction('block', data)"> Bloqueos</button>&nbsp;
+                    </td>
                 </tr>
             </tbody>
         </table>

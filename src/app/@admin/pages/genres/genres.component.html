@@ -1,4 +1,3 @@
-<p>genres works!</p>
 <app-table-pagination
 
 [query]="query"
@@ -7,4 +6,6 @@
 [resultData]="resultData"
 [include]="include"
 [tableColumns]="columns"
+(manageItem)="takeAction($event)"
+
 ></app-table-pagination>
