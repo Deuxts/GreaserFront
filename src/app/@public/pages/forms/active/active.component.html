@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg"></div>
+        <div class="col-lg-6">
+            <form action="" (ngSubmit)="add()" #forma="ngForm">
+                <h1>Activar usuario</h1>
+                <p>Introduzca el password y verifica que sea correcto junto con tu fecha de nacimiento</p>
+                <label for="email"><b>Fecha de nacimiento</b></label>
+                <app-date-picker-legal-age
+                    (newDate)="dataAsign($event)"
+                ></app-date-picker-legal-age>
+                <label for="password"><b>Contraseña</b></label>
+                <input type="password" #password="ngModel"[(ngModel)]="values.password"  placeholder="Introduzca la contraseña" name="password" required 
+                class="form-control" 
+                [ngClass]="{'is-valid': !password.invalid, 'is-invalid': password.invalid}" 
+                />
+                <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div *ngIf="password.errors.required">
+                        Introduzca una contraseña por favor 
+                    </div>
+                </div>
+                <label for="passwordDos"><b>Contraseña</b></label>
+                <input type="password" #passwordDos="ngModel"[(ngModel)]="values.passwordDos"  placeholder="Repita la contraseña" name="passwordDos" required 
+                class="form-control" 
+                [ngClass]="{'is-valid': !passwordDos.invalid, 'is-invalid': passwordDos.invalid}" 
+                />
+                <div class="alert alert-danger" *ngIf="passwordDos.invalid && (passwordDos.dirty || passwordDos.touched)">
+                    <div *ngIf="passwordDos.errors.required">
+                        Introduzca una contraseña por favor 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg">
+                        <button type="submit"  [disabled]="!forma.valid" class="signup-btn">Activar Usuario</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg"></div>
+    </div>
+</div>

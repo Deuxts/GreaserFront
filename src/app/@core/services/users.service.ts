@@ -1,3 +1,5 @@
+import { HttpHeaders } from '@angular/common/http';
+import { ACTIVE_USER } from './../../@graphql/operations/mutation/user';
 import { REGISTER_USER } from '@graphql/operations/mutation/user';
 import { Injectable } from '@angular/core';
 import { IRegisterForm } from '@core/interfaces/register.interface';
@@ -20,6 +22,7 @@ export class UsersService extends ApiService {
     return this.get(USERS_LIST_QUERY, {include: true, itemPage, page}).pipe(map((result: any) => {
       return result.users; }));
   }
+
   register(user: IRegisterForm){
     return this.set(REGISTER_USER, {user, include: false}).pipe(
       map((result: any) => {
@@ -27,4 +30,21 @@ export class UsersService extends ApiService {
       })
     );
   }
+
+  active(token: string, birthday: string, password: string){
+    const user = JSON.parse(atob(token.split('.')[1])).user;
+    return this.set(ACTIVE_USER, {
+      id: user.id,
+      birthday,
+      password,
+    }, {
+      headers: new HttpHeaders({
+        Athorization: token
+      })
+    }).pipe(map((result: any) => {
+      return result.activeUserAction;
+    }));
+  }
+
+
 }
