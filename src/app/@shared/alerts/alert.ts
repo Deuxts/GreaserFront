@@ -62,24 +62,26 @@ export async function userFormBasicDialog(title: string, html: string) {
     });
 }
 
-export async function optionsDetails( title: string, html: string, confirmButtonText: string, cancelButtonText: string){
+// tslint:disable-next-line: max-line-length
+export async function optionsDetails( title: string, html: string, width: number | string, confirmButtonText: string = '', cancelButtonText: string = '') {
     return await Swal.fire({
         title,
         html,
+        width: `${width}px`,
+        showCloseButton: true,
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#6c757d',
         cancelButtonColor: '#dc3545',
         confirmButtonText,
         cancelButtonText,
-        showCloseButton: true,
     }).then((result) => {
         console.log(result);
         if (result.value) {
-            console.log('Editar');
-            return true;
-        } else if (result.dismiss.toString() === 'cancel'){
-            console.log('Bloquear');
-            return false;
+        console.log('Editar');
+        return true;
+        } else if (result.dismiss.toString() === 'cancel') {
+        console.log('Bloquear');
+        return false;
         }
     });
 }

@@ -17,20 +17,20 @@ export const LOGIN_QUERY = gql`
 `;
 
 export const USERS_LIST_QUERY = gql`
-    query userList($include: Boolean!, $page: Int, $itemsPage: Int){
-        users (page: $page, itemsPage: $itemsPage){
-            info{
+    query usersList ($include: Boolean!, $page: Int, $itemsPage: Int, $active: ActiveFilterEnum){
+        users(page: $page, itemsPage: $itemsPage, active: $active) {
+            info {
                 ...ResultInfoObject
             }
             status
             message
-            users{
+            users {
                 ...UserObject
             }
         }
     }
-    ${USER_FRAGMENT}
-    ${RESULT_INFO_FRAGMENT}
+    ${ USER_FRAGMENT }
+    ${ RESULT_INFO_FRAGMENT }
 `;
 
 
