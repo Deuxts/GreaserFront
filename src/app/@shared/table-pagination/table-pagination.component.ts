@@ -6,6 +6,7 @@ import { USERS_LIST_QUERY } from '@graphql/operations/query/user';
 import { DocumentNode } from 'graphql';
 import { Observable } from 'rxjs/internal/Observable';
 import { TablePaginationService } from './table-pagination.service';
+import { ACTIVE_FILTERS } from '@core/constans/filters';
 
 @Component({
   selector: 'app-table-pagination',
@@ -20,6 +21,7 @@ export class TablePaginationComponent implements OnInit {
   @Input() resultData: IResultData;
   @Input() tableColumns: Array<ITableColums> = undefined;
   @Output() manageItem = new EventEmitter<Array<any>>();
+  @Input() filterActiveValues: ACTIVE_FILTERS = ACTIVE_FILTERS.ACTIVE;
   infoPage: IInfoPage;
   data$: Observable<any>;
   constructor(private service: TablePaginationService) { }
@@ -48,6 +50,7 @@ export class TablePaginationComponent implements OnInit {
       page: this.infoPage.page,
       itemsPage: this.infoPage.ItemsPage,
       include: this.include,
+      active: this.filterActiveValues
     };
     this.data$ = this.service.getCollectionData(this.query, variables, {}).pipe(
       map((result: any) => {
