@@ -1,14 +1,17 @@
 import gql from 'graphql-tag';
 import { SHOP_PRODUCT_FRAGMENT } from '@graphql/operations/fragment/shop-produc';
+import { RESULT_INFO_FRAGMENT } from '../fragment/result-info';
 
 export const SHOP_LAST_UNITS_OFFERS = gql `
     query productoPorOfertaYStock(
-    $page: Int
-    $itemsPage: Int
-    $active: ActiveFilterEnum
-    $random: Boolean
-    $topPrice: Float
-    $lastUnits: Int
+        $page: Int
+        $itemsPage: Int
+        $active: ActiveFilterEnum
+        $random: Boolean
+        $topPrice: Float
+        $lastUnits: Int
+        $showInfo: Boolean = false
+        $showCategory: Boolean = false
     ) {
         shopProductsOffersLast(
             page: $page
@@ -17,7 +20,10 @@ export const SHOP_LAST_UNITS_OFFERS = gql `
             topPrice: $topPrice
             lastUnits: $lastUnits
             random: $random
-        ) {
+            ) {
+            info @include(if: $showInfo) {
+                ...ResultInfoObject
+            }
             status
             message
             shopProducts {
@@ -26,6 +32,7 @@ export const SHOP_LAST_UNITS_OFFERS = gql `
         }
     }
     ${SHOP_PRODUCT_FRAGMENT}
+    ${RESULT_INFO_FRAGMENT}
 `;
 
 
@@ -35,7 +42,9 @@ export const SHOP_PRODUCT_BY_CATEGORY = gql`
         $itemsPage: Int
         $active: ActiveFilterEnum
         $random: Boolean
-        $category: ID!
+        $category: [ID!]!
+        $showInfo: Boolean = false
+        $showCategory: Boolean = false
     ) {
         shopProductsCategory(
         page: $page
@@ -44,6 +53,9 @@ export const SHOP_PRODUCT_BY_CATEGORY = gql`
         category: $category
         random: $random
         ) {
+            info @include(if: $showInfo) {
+                ...ResultInfoObject
+            }
             status
             message
             shopProducts {
@@ -52,6 +64,7 @@ export const SHOP_PRODUCT_BY_CATEGORY = gql`
         }
     }
     ${SHOP_PRODUCT_FRAGMENT}
+    ${RESULT_INFO_FRAGMENT}
 `;
 
 

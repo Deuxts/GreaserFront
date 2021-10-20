@@ -85,3 +85,17 @@ export async function optionsDetails( title: string, html: string, width: number
         }
     });
 }
+
+export const loadData = (title: string, html: string) => {
+    Swal.fire({
+        title,
+        html,
+        onBeforeOpen: () => {
+            Swal.showLoading();
+        },
+    });
+};
+
+export const closeAlert = () => {
+    Swal.close();
+};

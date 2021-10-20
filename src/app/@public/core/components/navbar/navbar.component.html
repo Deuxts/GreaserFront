@@ -9,12 +9,11 @@
     </button>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" *ngFor="let item of menuItems">
         <li class="nav-item active d-none d-lg-block ">
-            <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active">contact</a>
+            <a class="nav-link" 
+            [routerLink]="item.url" 
+            routerLinkActive="router-link-active">{{item.label}}</a>
         </li>
         </ul>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -28,7 +27,7 @@
                 <a class="nav-link" *ngIf="!access" [routerLink]="['/register']" routerLinkActive="router-link-active">Registro</a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link" *ngIf="access" [routerLink]="['/register']" routerLinkActive="router-link-active">{{userLabel}}</a>
+                <a class="nav-link" *ngIf="access" routerLinkActive="router-link-active">{{userLabel}}</a>
             </li>
             <li class="nav-item dropdown" >
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

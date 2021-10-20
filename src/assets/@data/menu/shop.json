@@ -1,0 +1,26 @@
+[   {
+        "url": "/",
+        "label": "Inicio   ",
+        "icon": ""
+    },{
+        "url": "/ropa/category/vestidos",
+        "label": "Vestidos   ",
+        "icon": ""
+    },{
+        "url": "/ropa/category/camisas",
+        "label": "Camisas   ",
+        "icon": ""
+    },{
+        "url": "/ropa/category/pantalones",
+        "label": "Pantalones   ",
+        "icon": ""
+    },{
+        "url": "/ropa/category/conjuntos",
+        "label": "Conjuntos   ",
+        "icon": ""
+    },{
+        "url": "/ropa/promotion/ofertas",
+        "label": "Promos   ",
+        "icon": ""
+    }
+]

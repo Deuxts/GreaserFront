@@ -1,0 +1,30 @@
+<div class="container background rounded padding-xl margin-x" *ngIf="infoPage && !loading">
+    <app-product-category-list
+    [title]= "ropaPageInfo.title"
+    [productsList]= "productsList"
+    [description] = "ropaPageInfo.description"
+    >
+    </app-product-category-list>
+    <div class="d-flex justify-content-between p-2">
+        <ngb-pagination
+            [collectionSize]="infoPage.total"
+            [(page)]="selectPage"
+            (pageChange)="loadData()"
+            [pageSize]="infoPage.itemsPage"
+            [maxSize]="15"
+            >
+        </ngb-pagination>
+        <select
+            class="custom-select"
+            style="width: auto;"
+            [(ngModel)]="infoPage.itemsPage"
+            (ngModelChange)="loadData()"
+            >
+            <option [ngValue]="5">5 Por pagina</option>
+            <option [ngValue]="10">10 Por pagina</option>
+            <option [ngValue]="15">15 Por pagina</option>
+            <option [ngValue]="20">20 Por pagina</option>
+        </select>
+    </div>
+</div>
+<br><br>

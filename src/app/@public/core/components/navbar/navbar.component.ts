@@ -1,6 +1,8 @@
 import { IMeData } from '@core/interfaces/session.interface';
 import { AuthService } from '@core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import shopMenu from '@data/menu/shop.json';
+import { ImenuItem } from '@core/interfaces/menu-item.interface';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  menuItems: Array<ImenuItem> = shopMenu;
   session: IMeData = {
     status: false
   };

@@ -10,6 +10,7 @@ import { IProduct } from '@mugan86/ng-shop-ui/lib/interfaces/product.interface';
 export class ProductCategoryListComponent {
   @Input() title = 'titulo de categoria';
   @Input() productsList: Array<IProduct> = [];
+  @Input() description = '';
   myCurrency = CURRENCIES_SYMBOL.MXN;
   constructor() { }
 

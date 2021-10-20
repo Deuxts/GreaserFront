@@ -1,19 +1,20 @@
-<div class="container">
-    <shop-carousel-items [items]="items"></shop-carousel-items>
+<div class="container" *ngIf="!loading">
+    <div class="container">
+        <shop-carousel-items [items]="items"></shop-carousel-items>
+    </div>
+
+    <div class="container background rounded padding-xl margin-xl">
+        <app-product-category-list
+        [title]="'Más vendidos'"
+        [productsList]="listOne"
+        ></app-product-category-list><app-product-category-list
+        [title]="'Otros'"
+        [productsList]="listTwo"
+        ></app-product-category-list><app-product-category-list
+        [title]="'OWO'"
+        [productsList]="list3"
+        ></app-product-category-list>
+    </div>
+
+    <br><br><br>
 </div>
-
-
-<div class="container background rounded padding-xl margin-xl">
-    <app-product-category-list
-    [title]="'Más vendidos'"
-    [productsList]="listOne"
-    ></app-product-category-list><app-product-category-list
-    [title]="'Otros'"
-    [productsList]="listTwo"
-    ></app-product-category-list><app-product-category-list
-    [title]="'OWO'"
-    [productsList]="list3"
-    ></app-product-category-list>
-</div>
-
-<br><br><br>

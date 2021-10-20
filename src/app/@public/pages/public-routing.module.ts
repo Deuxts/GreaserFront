@@ -45,6 +45,11 @@ const routes: Routes = [
       loadChildren: () =>
         import('./forms/change-password/change-password.module').then((m) => m.ChangePasswordModule),
       },
+      {
+        path: 'ropa/:type/:filter',
+        loadChildren: () =>
+          import('./ropa/ropa.module').then((m) => m.RopaModule),
+      },
     ],
   },
 ];

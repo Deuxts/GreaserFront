@@ -39,7 +39,7 @@ export class TablePaginationComponent implements OnInit {
     this.infoPage = {
       page: 1,
       pages: 1,
-      ItemsPage: this.itemsPage,
+      itemsPage: this.itemsPage,
       total: 1
     };
     this.loadData();
@@ -48,7 +48,7 @@ export class TablePaginationComponent implements OnInit {
   loadData(){
     const variables = {
       page: this.infoPage.page,
-      itemsPage: this.infoPage.ItemsPage,
+      itemsPage: this.infoPage.itemsPage,
       include: this.include,
       active: this.filterActiveValues
     };

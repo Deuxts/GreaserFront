@@ -13,5 +13,10 @@ export const SHOP_PRODUCT_FRAGMENT = gql`
                 count
             }
         }
+        category @include(if: $showCategory){
+            id
+            name
+            slug
+        }
     }
 `;

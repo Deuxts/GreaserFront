@@ -1,7 +1,7 @@
 export interface IInfoPage {
     page: number;
     pages: number;
-    ItemsPage: number;
+    itemsPage: number;
     total: number;
 }
 

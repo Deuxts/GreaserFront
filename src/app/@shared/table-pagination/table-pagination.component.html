@@ -60,11 +60,11 @@
             [collectionSize]="infoPage.total" 
             [(page)]="infoPage.page" 
             (pageChange)="pageChange()"
-            [pageSize]="infoPage.ItemsPage"
+            [pageSize]="infoPage.itemsPage"
         >
         </ngb-pagination>
-        <select class="custom-select" style="width: auto" 
-        [(ngModel)]="infoPage.ItemsPage" 
+        <select class="custom-select" style="width: auto;" 
+        [(ngModel)]="infoPage.itemsPage" 
         (ngModelChange)="loadData()">
             <option [ngValue]="5">5 por pagina</option>
             <option [ngValue]="10">10 por pagina</option>
