@@ -1,4 +1,4 @@
-import { SHOP_LAST_UNITS_OFFERS, SHOP_PRODUCT_BY_CATEGORY } from '@graphql/operations/query/shop-product';
+import { SHOP_LAST_UNITS_OFFERS, SHOP_PRODUCTS_DETAILS, SHOP_PRODUCT_BY_CATEGORY, SHOP_PRODUCT_RANDOM_ITEMS } from '@graphql/operations/query/shop-product';
 import { ApiService } from '@graphql/services/api.service';
 import { Apollo } from 'apollo-angular';
 import { Injectable } from '@angular/core';
@@ -91,22 +91,51 @@ export class ProductsService extends ApiService{
     }));
   }
 
+  getRandomItem(){
+    return this.get(
+      SHOP_PRODUCT_RANDOM_ITEMS
+      ).pipe(map((result: any) => {
+      console.log('resilt ', result);
+      const data = result.randomItems.shopProducts;
+      return this.manageInfo(data, true);
+    }));
+  }
+
+  getItem(id: number){
+    return this.get(
+      SHOP_PRODUCTS_DETAILS, {
+        id
+      }, {}, false
+    ).pipe(map((result: any) => {
+      const data = result.shopProductDetails;
+      return{
+        product: this.mapeado(data.shopProduct, true),
+        relational: data.shopProduct
+      };
+    }));
+  }
+
+  private mapeado(shopObject, showDescription){
+    return {
+      id: shopObject.id,
+      img: shopObject.product.img,
+      name: shopObject.product.name,
+      rating: shopObject.product.rating,
+      description: (shopObject.category && showDescription) ? shopObject.category.name : '',
+      qty: 1,
+      price: shopObject.price,
+      stock: shopObject.stock
+    };
+  }
+
   private manageInfo(listProducts: any, showDescription = true) {
       const resultList: Array<IProduct> = [];
       listProducts.map((shopObject) => {
-        resultList.push({
-          id: shopObject.id,
-          img: shopObject.product.img,
-          name: shopObject.product.name,
-          rating: shopObject.product.rating,
-          description: (shopObject.category && showDescription) ? shopObject.category.name : '',
-          qty: 1,
-          price: shopObject.price,
-          stock: shopObject.stock
-        });
+        resultList.push(this.mapeado(shopObject, showDescription));
       });
       return resultList;
   }
+
 }
 
 

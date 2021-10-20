@@ -9,14 +9,14 @@ export const ROPA_PAGES_INFO = {
     'category/camisas': {
         title: 'Camisas',
         description: ``,
-        platformsIds: ['3'],
+        categoryIds: ['3'],
         topPrice: -1,
         stock: -1
     },
     'category/pantalones': {
         title: 'Pantalones',
         description: ``,
-        categoryIds: ['4'],
+        categoryIds: ['18'],
         topPrice: -1,
         stock: -1
     },

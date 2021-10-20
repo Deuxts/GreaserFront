@@ -1,0 +1,61 @@
+<!-- Page Content -->
+<div class="container background " *ngIf= "product">
+    <!-- Portfolio Item Row -->
+    <div class="row">
+        <div class="col-md-8">
+            <img class="img-fluid margin-product" [src]="selectImage" alt="">
+        </div>
+        <div class="col-md-4">
+            <h3 class="my-3">{{product.name}}</h3>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ng-template #noDiscount>
+                        <div class="price">
+                            Precio:  {{myCurrency}} {{product.price | number}}
+                        </div>
+                    </ng-template>
+                    <div class="price" *ngIf=" product.discount; else noDiscount">
+                        {{myCurrency}} {{product.priceDiscount | number}}
+                        <span>
+                            {{myCurrency}} {{product.price | number}}
+                        </span>
+                        <span class="descuento">
+                            ({{product.discount}}%)
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    Stock: {{product.stock}}
+                    <hr>
+                    <shop-qty-selector
+                    [qty]="product.qty"
+                    [stock]="product.stock"
+                    (updateValue)="changeValue($event)"
+                    ></shop-qty-selector>
+                </div>
+            </div>
+            <span class="h5">Talla:</span> &nbsp;
+            <select (change)="selectOtherPlatform($event)">
+                <option [value]="product.id">{{product.description}}</option>
+                <option [value]="opt.id" *ngFor="let opt of relationalProducts">{{opt.size}}</option>
+            </select>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- probable interes -->
+    <hr>
+    <h3 class="my-4">Te puede interesar</h3>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mb-4" *ngFor="let itemInfo of randomItems">
+            <a [routerLink]="['/ropa/details', itemInfo.id]">
+                <img class="img-fluid mas-contenido" [src]="itemInfo.img" alt="">
+            </a>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+<br>
+<br>
+<br>
+<br>
