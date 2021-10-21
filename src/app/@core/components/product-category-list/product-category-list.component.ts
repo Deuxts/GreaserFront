@@ -1,3 +1,4 @@
+import { CartService } from '@shop/core/services/cart.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CURRENCIES_SYMBOL } from '@mugan86/ng-shop-ui';
@@ -13,10 +14,11 @@ export class ProductCategoryListComponent {
   @Input() productsList: Array<IProduct> = [];
   @Input() description = '';
   myCurrency = CURRENCIES_SYMBOL.MXN;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cartService: CartService) { }
 
   addToCart($event){
-
+    console.log('agregar', $event);
+    this.cartService.manageProduct($event);
   }
 
   showProductDetails($event: IProduct){

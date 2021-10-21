@@ -32,14 +32,14 @@
             <li class="nav-item" >
                 <a class="nav-link" *ngIf="access" routerLinkActive="router-link-active">{{userLabel}}</a>
             </li>
+            <li class="nav-item" >
+                <a class="nav-link" (click) = 'open()'><i class="fas fa-cart-arrow-down" style="color:azure"></i></a>
+            </li>
             <li class="nav-item dropdown" >
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Perfil</a>
-                <a class="dropdown-item" href="#">Configuración</a>
-                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" (click)="logout()">Salir de la sesión</a>
             </div>
             </li>
