@@ -33,7 +33,7 @@
                 <a class="nav-link" *ngIf="access" routerLinkActive="router-link-active">{{userLabel}}</a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link" (click) = 'open()'><i class="fas fa-cart-arrow-down" style="color:azure"></i></a>
+                <a class="nav-link" (click) = 'open()'><i class="fas fa-cart-arrow-down" style="color:azure"></i><span class="badge badge-success notification">{{ cartItemsTotal }}</span></a>
             </li>
             <li class="nav-item dropdown" >
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

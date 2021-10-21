@@ -55,6 +55,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./ropa/ropa.module').then((m) => m.RopaModule),
       },
+      {
+        path: 'checkout',
+        loadChildren: () =>
+          import('./forms/checkout/checkout.module').then((m) => m.CheckoutModule),
+      },
     ],
   },
 ];
