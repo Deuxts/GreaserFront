@@ -1,5 +1,6 @@
 import { REGEX_EMAIL } from '@core/constans/regex';
 import Swal from 'sweetalert2';
+import { TYPE_ALERT } from './values.config';
 
 
 const swalBasic = (title: string, html: string) =>
@@ -98,4 +99,15 @@ export const loadData = (title: string, html: string) => {
 
 export const closeAlert = () => {
     Swal.close();
+};
+
+export const infoEventAlert = async (title: string, html: string, typeAlert: TYPE_ALERT = TYPE_ALERT.WARNING) => {
+    return await Swal.fire({
+        title,
+        html,
+        icon: typeAlert,
+        preConfirm: () => {
+            return true;
+        },
+    });
 };

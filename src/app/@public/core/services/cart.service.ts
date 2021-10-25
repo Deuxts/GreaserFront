@@ -96,7 +96,7 @@ export class CartService {
 
   openNav(){
     console.log('abrir');
-    document.getElementById('mySidenav').style.width = '900px';
+    document.getElementById('mySidenav').style.width = '400px';
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('app').style.overflow = 'hidden';
   }
@@ -104,5 +104,13 @@ export class CartService {
     document.getElementById('mySidenav').style.width = '0';
     document.getElementById('overlay').style.display = 'none';
     document.getElementById('app').style.overflow = 'auto';
+  }
+
+  orderDescription(){
+    let description = '';
+    this.cart.products.map((product: IProduct) => {
+      description += `${product.name} x ${product.qty} \n`;
+    });
+    return description;
   }
 }

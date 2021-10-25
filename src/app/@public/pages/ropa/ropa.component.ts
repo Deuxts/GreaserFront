@@ -54,7 +54,7 @@ export class RopaComponent implements OnInit {
     }else{
       this.products.getByLastUnitsOffers(
         this.selectPage, this.infoPage.itemsPage,
-          ACTIVE_FILTERS.ACTIVE, true, this.ropaPageInfo.topPrice, this.ropaPageInfo.stock,  true, true)
+          ACTIVE_FILTERS.ACTIVE, false, this.ropaPageInfo.topPrice, this.ropaPageInfo.stock,  true, false)
           .subscribe(data => {
             this.getResult(data);
           });
