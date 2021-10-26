@@ -1,23 +1,23 @@
 [
     {
         "id": "01",
-        "title": "GTA V",
-        "description": "Juego de Rockstar",
-        "url": "http://www.rockstargames.com/V/",
+        "title": "",
+        "description": "",
+        "url": "",
         "background": "https://www.10wallpaper.com/wallpaper/1366x768/1804/Hanger_clothing_fashion_market_4K_HD_1366x768.jpg    "
     },
     {
         "id": "02",
-        "title": "Shadow of Tomb Raider",
-        "description": "Lara Croft...",
-        "url": "https://tombraider.square-enix-games.com/en-us",
+        "title": "",
+        "description": "",
+        "url": "",
         "background": "https://media.rawg.io/media/games/b45/b45575f34285f2c4479c9a5f719d972e.jpg"
     },
     {
         "id": "03",
-        "title": "Tomb Raider (2013)",
-        "description": "Lara Croft...",
-        "url": "https://tombraider.square-enix-games.com/en-us",
+        "title": "",
+        "description": "",
+        "url": "",
         "background": "https://media.rawg.io/media/games/81b/81b138691f027ed1f8720758daa0d895.jpg"
     }
     ]

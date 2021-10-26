@@ -9,21 +9,21 @@ export const ROPA_PAGES_INFO = {
     'category/camisas': {
         title: 'Camisas',
         description: ``,
-        categoryIds: ['3'],
+        categoryIds: ['2'],
         topPrice: -1,
         stock: -1
     },
     'category/pantalones': {
         title: 'Pantalones',
         description: ``,
-        categoryIds: ['18'],
+        categoryIds: ['3'],
         topPrice: -1,
         stock: -1
     },
     'category/conjuntos': {
         title: 'Conjuntos',
         description: ``,
-        categoryIds: ['5'],
+        categoryIds: ['4'],
         topPrice: -1,
         stock: 30
     },
@@ -31,7 +31,7 @@ export const ROPA_PAGES_INFO = {
         title: 'En liquidación',
         description: `Aqui encontraras ropa por menos de $99`,
         categoryIds: [],
-        topPrice: 45,
+        topPrice: 150,
         stock: 40
     },
 };

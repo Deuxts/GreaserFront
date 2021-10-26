@@ -96,7 +96,7 @@ export class CartService {
 
   openNav(){
     console.log('abrir');
-    document.getElementById('mySidenav').style.width = '400px';
+    document.getElementById('mySidenav').style.width = '360px';
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('app').style.overflow = 'hidden';
   }

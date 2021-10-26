@@ -8,7 +8,7 @@ export const HOME_PAGE = gql`
     ) {
         vestidos: shopProductsCategory(
             itemsPage: 4
-            category: ["18"]
+            category: ["4"]
             random: true
         ) {
             shopProducts {
@@ -17,7 +17,7 @@ export const HOME_PAGE = gql`
         }
         conjuntos: shopProductsCategory(
             itemsPage: 4
-            category: ["18"]
+            category: ["1"]
             random: true
         ) {
             shopProducts {
@@ -26,7 +26,7 @@ export const HOME_PAGE = gql`
         }
         topPrice35: shopProductsOffersLast(
             itemsPage: 4
-            topPrice: 35
+            topPrice: 140
             random: true
         ) {
             shopProducts {
