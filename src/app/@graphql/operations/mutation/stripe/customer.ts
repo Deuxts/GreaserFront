@@ -17,8 +17,8 @@ export const CREATE_CUSTOMER_STRIPE = gql `
 `;
 
 export const CREATE_PAY_ORDER = gql `
-mutation pago($payment: ChargeInput!){
-    chargeOrder(payment: $payment){
+mutation pago($payment: ChargeInput!, $stockChange:[ShopProductStockInput!]!){
+    chargeOrder(payment: $payment, stockChange: $stockChange){
             status
             message
             charge{

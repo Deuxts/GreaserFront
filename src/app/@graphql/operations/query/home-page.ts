@@ -8,7 +8,7 @@ export const HOME_PAGE = gql`
     ) {
         vestidos: shopProductsCategory(
             itemsPage: 4
-            category: ["4"]
+            category: ["18"]
             random: true
         ) {
             shopProducts {
