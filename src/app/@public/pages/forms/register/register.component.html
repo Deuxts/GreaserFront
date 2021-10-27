@@ -5,8 +5,7 @@
             <form (ngSubmit)="add()" #forma="ngForm">
             <h1>Registro de usuario</h1>
             <p>
-                Rellena los datos del formulario para efectuar el registro de tu
-                cuenta de usuario.
+                Rellena el formulario para registrarte cómo usuario.
             </p>
             <hr />
             <label for="name"><b>Nombre</b></label>
@@ -38,7 +37,7 @@
             />
             <div class="alert alert-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
                 <div *ngIf="lastname.errors.required">
-                ingrese su apellido
+                Ingrese su apellido
                 </div>
             </div>
             <label for="email"><b>Fecha de nacimiento</b></label>
@@ -48,7 +47,7 @@
             <label for="email"><b>Email</b></label>
             <input
                 type="text"
-                placeholder="Introduzca su email"
+                placeholder="Usuario@gmail.com"
                 name="email"
                 #email="ngModel"
                 [(ngModel)]="register.email"
@@ -59,7 +58,7 @@
             />
             <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
                 <div *ngIf="email.errors.required">
-                ingrese su correo
+                Ingrese su correo
                 </div>
                 <div *ngIf="email.errors.pattern">
                 El correo ingresado no contiene el formato correcto, por favor introduzca un correo con el siguiente formato [usuario]@[dominio].[com]
@@ -74,6 +73,7 @@
                 #password="ngModel"
                 [(ngModel)]="register.password"
                 class="form-control"
+                [pattern]="rexPassword"
                 [ngClass]="{'is-valid': password.valid, 'is-invalid': password.invalid}"
                 required
             />
@@ -81,12 +81,12 @@
                 <div *ngIf="password.errors.required">
                 Ingrese una contraseña por favor
                 </div>
+                <div *ngIf="password.errors.pattern">
+                    La contraseña debe de contener al menos 8 caracteres, en los cuales deberá ingresar al menos 1 mayúscula, 1 minúscula y 1 número. 
+                </div>
             </div>
-    
-            <p>
-                al creear la cuenta aceptas los terminos y condiciones
-                <a href="#" style="color: dodgerblue;">Terms & Privacy</a>.
-            </p>
+            <br>
+            <br>
             <p>
                 ¿Ya tiene una cuenta?
                 <a [routerLink]="['/login']" style="color: dodgerblue;"
@@ -104,3 +104,8 @@
         <div class="col-lg"></div>
     </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>

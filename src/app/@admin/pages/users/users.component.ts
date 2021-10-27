@@ -179,14 +179,14 @@ export class UsersComponent implements OnInit {
     const result = unblock
       ? await optionsDetails(
           '¿Desbloquear?',
-          `Si desbloqueas el usuario seleccionado, se mostrará en la lista y podrás hacer compras y ver toda la información`,
+          `Podrá hacer movimientos de compras en la página`,
           500,
           'No, no desbloquear',
           'Si, desbloquear'
         )
       : await optionsDetails(
           '¿Bloquear?',
-          `Si bloqueas el usuario seleccionado, no se mostrará en la lista`,
+          `No podrá hacer movimientos de compras en la página`,
           430,
           'No, no bloquear',
           'Si, bloquear'

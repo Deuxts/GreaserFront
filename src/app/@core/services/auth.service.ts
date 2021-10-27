@@ -32,11 +32,11 @@ export class AuthService extends ApiService{
         }
         this.updateSession(result);
       });
-      console.log('sesion iniciada');
+      console.log('Sesión iniciada');
       return;
     }
     this.updateSession({status : false});
-    console.log('sesion no iniciada');
+    console.log('Sesión no iniciada');
   }
 
   // inicio de sesion

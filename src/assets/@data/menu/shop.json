@@ -22,9 +22,5 @@
         "url": "/ropa/promotion/ofertas",
         "label": "Promos   ",
         "icon": ""
-    },{
-        "url": "/ropa/details/1",
-        "label": "detalles",
-        "icon": ""
     }
 ]

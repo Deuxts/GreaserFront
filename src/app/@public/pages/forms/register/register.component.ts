@@ -4,7 +4,7 @@ import { UsersService } from '@core/services/users.service';
 import { basicAlert } from 'src/app/@shared/alerts/toast';
 import { TYPE_ALERT } from 'src/app/@shared/alerts/values.config';
 import { Router } from '@angular/router';
-import { REGEX_EMAIL } from '@core/constans/regex';
+import { REGEX_EMAIL, REGEX_PASS } from '@core/constans/regex';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +13,7 @@ import { REGEX_EMAIL } from '@core/constans/regex';
 })
 export class RegisterComponent implements OnInit {
   rexEmail = REGEX_EMAIL;
+  rexPassword = REGEX_PASS;
   register: IRegisterForm = {
     name: '',
     lastname: '',

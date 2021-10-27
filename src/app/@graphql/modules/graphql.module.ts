@@ -25,7 +25,7 @@ export class GraphqlModule {
         console.log('ERROR DE GRAPHQL', networkError);
       }
     });
-    const uri = 'http://localhost:2002/graphql';
+    const uri = 'https://greaser.herokuapp.com/graphql';
     const link = ApolloLink.from(
       [
         errorLink,

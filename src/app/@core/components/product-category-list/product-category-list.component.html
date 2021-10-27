@@ -3,7 +3,7 @@
     <h2>{{title}}</h2>
     <p *ngIf="description != ''">{{ description }}</p>
     <hr>
-        <div class="row">
+        <div class="row ">
             <div class="col-lg-3 owo " *ngFor="let p of productsList" style="margin-bottom: 12px;">
                 <shop-product-item
                     [selectCurrency] ="myCurrency"

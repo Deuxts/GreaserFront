@@ -95,8 +95,8 @@ export class CheckoutComponent implements OnInit {
                   console.log('ok!');
                   console.log(result.charge);
                   await infoEventAlert(
-                    'Se ha realizado el pago de forma existosa',
-                    'verifique su correo para más info',
+                    'Se ha realizado el pago de forma exitosa',
+                    'En su correo encontrar más información',
                     TYPE_ALERT.SUCCESS
                   );
                   this.sendEmail(result.charge);
@@ -106,7 +106,7 @@ export class CheckoutComponent implements OnInit {
                   console.log(result.message);
                   await infoEventAlert(
                     'El pago fallo',
-                    'intentelo de nuevo',
+                    'Inténtelo de nuevo',
                     TYPE_ALERT.WARNING
                   );
                 }
@@ -123,7 +123,7 @@ export class CheckoutComponent implements OnInit {
     this.available = false;
     await infoEventAlert(
       'No disponible, no hay productos para pagar',
-      'para realizar el pago, por favor primero ingresa productos a tu carrito',
+      'Para realizar el pago, por favor primero ingresa productos a tu carrito',
       TYPE_ALERT.INFO
     );
     this.router.navigate(['/']);
@@ -149,21 +149,21 @@ export class CheckoutComponent implements OnInit {
   async sendData() {
     if (this.meData.user.stripeCustomer === null) {
       await infoEventAlert(
-        'No esta registrado para realizar pagos',
+        'No está registrado para realizar pagos',
         'pulse en "ok", para continuar',
         TYPE_ALERT.WARNING
       );
       // registrar al usuario en stripe
       const stripeName = `${this.meData.user.name} ${this.meData.user.lastname}`;
-      loadData('Registrando al usuario', 'creando su cuenta de pagos');
+      loadData('Registrandolo como cliente', 'Creando su cuenta pa pagos');
       this.customerService
         .add(stripeName, this.meData.user.email)
         .pipe(take(1))
         .subscribe(async (result: { status: boolean; message: string }) => {
           if (result.status) {
             await infoEventAlert(
-              'Cliente registrago',
-              'Reinicie su sesion',
+              'Cliente registrado',
+              'Reinicie su sesión',
               TYPE_ALERT.SUCCESS
             );
             localStorage.setItem('address', this.address);
@@ -171,7 +171,7 @@ export class CheckoutComponent implements OnInit {
             this.auth.resetSession();
           } else {
             await infoEventAlert(
-              'Cliente NO registrago',
+              'Cliente NO registrado',
               result.message,
               TYPE_ALERT.WARNING
             );
@@ -186,7 +186,7 @@ export class CheckoutComponent implements OnInit {
     const mail: IMail = {
       to: charge.receiptEmail,
       subject: 'Info sobre tu pedido',
-      html: `<h3>El pedido pago se realizo de forma exitosa, si es que tienes dudas o deseas ver más información sobre tu compra, por favor  <a href=${charge.receiptUrl} target="_blank"> haz click aqui!</a></h3>`,
+      html: `<h3>El pedido pago se realizó de forma exitosa, si es que tienes dudas o deseas ver más información sobre tu compra, por favor  <a href=${charge.receiptUrl} target="_blank"> haz click aqui!</a></h3>`,
     };
     this.mailService.send(mail).pipe(take(1)).subscribe();
   }

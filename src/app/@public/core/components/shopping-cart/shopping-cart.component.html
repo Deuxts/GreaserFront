@@ -3,7 +3,7 @@
     <h5> Tus productos</h5>
     <hr><!--{{ cart | json}}-->
         <div class="card product" *ngIf="cart.total === 0">
-            No hay nada aqui, empieza a añadir!
+            No hay nada aquí, empieza a añadir!
         </div>
         <div class="card product" *ngFor="let product of cart.products">
             <div class="row">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-lg">
                     <div class="row">
-                        <div class="col-lg-9">
+                        <div class="col-lg-8">
                             <h6>{{product.name}}</h6>
                             <shop-qty-selector
                                 [qty]="product.qty"
@@ -23,7 +23,7 @@
                         </div>
                         <div class="col-lg">
                             <ng-template #noDiscount>
-                                <div class="price">{{ myCurrency }} {{ product.price }}</div>
+                                <div class="price">$ {{ product.price * product.qty}}</div>
                             </ng-template>
                               <div class="price" *ngIf="product.discount; else noDiscount">
                                 {{ myCurrency }} {{ product.priceDiscount | number }} <br/>

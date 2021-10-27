@@ -4,6 +4,7 @@ import { AuthService } from '@core/services/auth.service';
 import { TYPE_ALERT } from 'src/app/@shared/alerts/values.config';
 import { basicAlert, } from 'src/app/@shared/alerts/toast';
 import { Router } from '@angular/router';
+import { REGEX_EMAIL } from '@core/constans/regex';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent {
   };
 
   constructor(private auth: AuthService, private router: Router) { }
+  rexEmail = REGEX_EMAIL;
 
   init(){
     this.auth.login(this.login.email, this.login.password).subscribe(
