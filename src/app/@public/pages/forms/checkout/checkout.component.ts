@@ -2,7 +2,7 @@ import { IProduct } from '@mugan86/ng-shop-ui/lib/interfaces/product.interface';
 import { MailService } from './../../../../@core/services/mail.service';
 import { IMail } from './../../../../@core/interfaces/mail.interface';
 import { ICart } from './../../../core/components/shopping-cart/shopping-cart.interface';
-import { IPayment } from './../../../../../../../GreaserBack/src/interfaces/stripe/payment.interface';
+import { IPayment } from '@core/interfaces/stripe/payment.interface';
 import { ChargeService } from './../../../core/services/stripe/charge.service';
 import { CustomerService } from './../../../core/services/stripe/customer.service';
 import { CartService } from '@shop/core/services/cart.service';
