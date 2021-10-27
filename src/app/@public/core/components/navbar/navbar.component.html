@@ -22,13 +22,13 @@
         </ul>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item" *ngIf="access && role == 'ADMIN'" >
-                <a class="nav-link" [routerLink]="['/admin']" routerLinkActive="router-link-active">Admin</a>
+                <a class="nav-link" [routerLink]="['/admin']" routerLinkActive="router-link-active" data-toggle="collapse" data-target="#navbarSupportedContent">Admin</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" *ngIf="!access" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+                <a class="nav-link" *ngIf="!access" [routerLink]="['/login']" routerLinkActive="router-link-active" data-toggle="collapse" data-target="#navbarSupportedContent">Login</a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link" *ngIf="!access" [routerLink]="['/register']" routerLinkActive="router-link-active">Registro</a>
+                <a class="nav-link" *ngIf="!access" [routerLink]="['/register']" routerLinkActive="router-link-active" data-toggle="collapse" data-target="#navbarSupportedContent">Registro</a>
             </li>
             <li class="nav-item" >
                 <a class="nav-link" *ngIf="access" routerLinkActive="router-link-active">{{userLabel}}</a>
@@ -42,8 +42,8 @@
                     Info
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="['/orders']" routerLinkActive="router-Link-Active" >Pedidos</a>
-                    <a class="dropdown-item" (click)="logout()">Salir de la sesión</a>
+                    <a class="dropdown-item" [routerLink]="['/orders']" routerLinkActive="router-Link-Active" data-toggle="collapse" data-target="#navbarSupportedContent">Pedidos</a>
+                    <a class="dropdown-item" (click)="logout()" data-toggle="collapse" data-target="#navbarSupportedContent">Salir de la sesión</a>
                 </div>
             </li>
         </ul>
