@@ -48,8 +48,12 @@
         </ul>
     </div>
   <script>
-    $('.a').on('click', function(){
-      $('.navbar-toggler').click(); //bootstrap 4.x
+    $(function() {
+        $('.nav a').on('click', function(){ 
+            if($('.navbar-toggle').css('display') !='none'){
+                $('.navbar-toggle').trigger( "click" );
+            }
+        });
     });
   </script>
 </nav>
