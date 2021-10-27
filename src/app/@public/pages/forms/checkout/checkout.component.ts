@@ -186,7 +186,7 @@ export class CheckoutComponent implements OnInit {
     const mail: IMail = {
       to: charge.receiptEmail,
       subject: 'Info sobre tu pedido',
-      html: `<h3>El pedido pago se realizó de forma exitosa, si es que tienes dudas o deseas ver más información sobre tu compra, por favor  <a href=${charge.receiptUrl} target="_blank"> haz click aqui!</a></h3>`,
+      html: `<h3>El pago se realizó de forma exitosa, si es que tienes dudas o deseas ver más información sobre tu compra, por favor  <a href=${charge.receiptUrl} target="_blank"> haz click aqui!</a></h3>`,
     };
     this.mailService.send(mail).pipe(take(1)).subscribe();
   }
