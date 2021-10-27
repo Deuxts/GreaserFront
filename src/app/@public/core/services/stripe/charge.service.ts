@@ -1,5 +1,5 @@
 import { Apollo } from 'apollo-angular';
-import { IPayment } from './../../../../../../../GreaserBack/src/interfaces/stripe/payment.interface';
+import { IPayment } from '@core/interfaces/stripe/payment.interface';
 import { Injectable } from '@angular/core';
 import { ApiService } from '@graphql/services/api.service';
 import { map } from 'rxjs/internal/operators/map';
