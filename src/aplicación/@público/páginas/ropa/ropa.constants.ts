@@ -28,8 +28,8 @@ export const ROPA_PAGES_INFO = {
         stock: 30
     },
     'promotion/ofertas': {
-        title: 'En liquidación',
-        description: `Aqui encontraras ropa por menos de $99`,
+        title: '¡¡¡¡¡ OFERTAS !!!!!',
+        description: `Productos por menos de $150  MXN!!!!`,
         categoryIds: [],
         topPrice: 150,
         stock: 40
